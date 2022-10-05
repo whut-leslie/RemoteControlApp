@@ -1,0 +1,27 @@
+
+
+<LogoSall_IMG@Image>
+    source:'Img/logoSmall.png'
+    pos:self.parent.pos
+
+<LoginButton@LoginImageButton>
+	source: 'Img/login_button.png'
+	size_hint: 0.3, 0.13
+
+<LoginPage>:
+    canvas:
+        Color:
+            rgba:[1,1,1,1]
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source:'Img/login_background.jpg'
+
+
+    LoginButton:
+	    pos_hint: {"center_x": 0.5, "center_y": 0.3}
+	    on_press: root.index_slide_button()
+
+    AsyncImage:
+        source:'Img/logoSmall.png'
+        pos_hint: {"center_x": 0.5, "center_y": 0.6}

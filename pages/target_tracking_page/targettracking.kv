@@ -1,0 +1,80 @@
+<BackButton@BackImageButton>
+    size_hint: 0.05, 0.05
+<FaceTrackingButton@FaceTrackingImageButton>
+    source: 'Img/face_tracking.png'
+<ColorTrackingButton@ColorTrackingImageButton>
+    source: 'Img/color_tracking.png'
+<ColorFollowButton@ColorFollowImageButton>
+    source: 'Img/color_follow.png'
+
+<TargetTrackingPage>:
+    canvas:
+        Color:
+            rgba:[1,1,1,1]
+        Rectangle:
+            source:'Img/image_background.jpg'
+            size:self.size
+            pos:self.pos
+
+
+
+    BackButton:
+        source: 'Img/back_icon.jpg'
+        pos_hint: {"center_x": 0.05, "center_y": 0.96}
+        on_press: root.index_slide_button()
+    Label:
+        text:"\u76EE\u6807\u8FFD\u8E2A"
+        font_name:'msyh.ttc'
+        size_hint: 0.5, 0.5
+        pos_hint: {"center_x": 0.5, "center_y": 0.96}
+        bold:True
+        font_size:30
+
+
+    FloatLayout:
+
+        BoxLayout:
+            pos_hint: {'x': 0, 'y': 0}
+            size_hint:0.6,0.9
+            orientation:'vertical'
+            FloatLayout:
+
+                FloatLayout:
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                    size_hint:0.8,0.8
+                    canvas:
+                        Color:
+                            rgba:[1,1,1,1]
+                        Rectangle:
+                            size:self.width,self.height
+                            pos:self.pos
+
+
+        BoxLayout:
+            pos_hint: {'x': 0.5, 'y': 0}
+            size_hint:0.4,0.9
+
+            FloatLayout:
+                FaceTrackingButton:
+                    size_hint: 0.6, 0.16
+                    pos_hint: {"center_x": 0.6, "center_y": 0.7}
+                ColorTrackingButton:
+                    size_hint: 0.6, 0.16
+                    pos_hint: {"center_x": 0.6, "center_y": 0.5}
+                ColorFollowButton:
+                    size_hint: 0.6, 0.16
+                    pos_hint: {"center_x": 0.6, "center_y": 0.3}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

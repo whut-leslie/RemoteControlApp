@@ -1,0 +1,92 @@
+<RemoteConButton@RemoteConImageButton>
+
+
+<WifiButton@WifiImageButton>
+    size_hint: 0.1, 1.0
+    source:'Img/image_wifi.png'
+
+<MenuButton@MenuImageButton>
+    source:'Img/image_dog_list.png'
+    size_hint: 0.1, 1.0
+
+<IndexPage>:
+    canvas:
+        Color:
+            rgba:[1,1,1,1]
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source:'Img/index_background.jpg'
+
+    WifiButton:
+        pos_hint: {"center_x": 0.95, "center_y": 0.95}
+        on_press: root.wifi_slide_button()
+
+    MenuButton:
+        pos_hint: {"center_x": 0.05, "center_y": 0.95}
+
+    ScrollView:
+        pos_hint: {'x':0, 'y': 0}
+        size_hint:1,0.9
+        do_scroll_x: True
+        do_scroll_y: False
+        allow_stretch: True
+
+        FloatLayout:
+            size_hint_y: None
+            size_hint_x: None
+            size: root.width*3.5, root.height
+            allow_stretch: True
+
+            RemoteConButton:
+                source: 'Img/remote_control_button.png'
+                size_hint:.08,.5
+                pos_hint: {'x':0.02, 'y':0.35}
+                allow_stretch: True
+                on_press: root.remote_control_slide_button()
+
+
+            RemoteConButton:
+                source: 'Img/obstacle_avoid_button.png'
+                size_hint:.08,.5
+                pos_hint: {'x':0.14, 'y':0.35}
+                allow_stretch: True
+                on_press: root.obstacle_avoid_slide_button()
+
+            RemoteConButton:
+                size_hint:.08,.5
+                source: 'Img/line_patrol_button.png'
+                allow_stretch: True
+                pos_hint: {'x':0.26, 'y':0.35}
+                on_press: root.line_patrol_slide_button()
+
+            RemoteConButton:
+                size_hint:.08,.5
+                source: 'Img/object_detection_button.png'
+                allow_stretch: True
+                pos_hint: {'x':0.38, 'y':0.35}
+                on_press: root.object_detection_slide_button()
+
+            RemoteConButton:
+                size_hint:.08,.5
+                source: 'Img/target_tracking_button.png'
+                pos_hint: {'x':0.5, 'y':0.35}
+                on_press: root.target_tracking_slide_button()
+
+            RemoteConButton:
+                size_hint:.08,.5
+                source: 'Img/target_recognition_button.png'
+                pos_hint: {'x':0.62, 'y':0.35}
+                on_press: root.target_recognition_slide_button()
+
+            RemoteConButton:
+                size_hint:.08,.5
+                source: 'Img/identification_control_button.png'
+                pos_hint: {'x':0.74, 'y':0.35}
+                on_press: root.identification_control_slide_button()
+
+            RemoteConButton:
+                size_hint:.08,.5
+                source: 'Img/auto_driving_button.png'
+                pos_hint: {'x':0.86, 'y':0.35}
+                on_press: root.auto_driving_slide_button()
