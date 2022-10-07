@@ -4,6 +4,8 @@
 <ConnectButton@ConnectImageButton>
     source: 'Img/connect_button.png'
 
+
+
 <WifiPage>:
     canvas:
         Color:
@@ -19,6 +21,7 @@
         on_press: root.index_slide_button()
 
     BoxLayout:
+        id:wifi_page
         orientation:"vertical"
         BoxLayout:
             Label:
@@ -28,6 +31,7 @@
                 font_size:30
 
         BoxLayout:
+            id:ip_configuration
             Label:
                 text: 'Ip:'
                 color:[1,1,1,1]
@@ -36,7 +40,7 @@
                 anchor_x: "left"
                 anchor_y: "center"
                 TextInput:
-                    id: name_input
+                    id: ip_input
                     text: '192.168.1.68'
                     size_hint_x: .5
                     size_hint_y: None
@@ -44,7 +48,7 @@
                     padding_x: [self.center[0]/6.0 - self._get_text_width(max(self._lines, key=len), self.tab_width, self._label_cached)/6.0, 0]
                     padding_y: [self.height/2.0 - (self.line_height/2.0) * len(self._lines), 0]
         BoxLayout:
-
+            id:port_configuration
             Label:
                 text: 'Port:'
                 color: (1, 1, 1, 1)
@@ -56,7 +60,7 @@
                 anchor_y: "center"
                 TextInput:
                     text: '6000'
-                    id: me_word_num_box_input
+                    id: port_input
                     size_hint_x: .5
                     size_hint_y: None
                     height: '32dp'
@@ -64,7 +68,7 @@
                     padding_y: [self.height/2.0 - (self.line_height/2.0) * len(self._lines), 0]
 
         BoxLayout:
-
+            id:video_configuration
             Label:
                 text: 'Video:'
                 color: (1, 1, 1, 1)
@@ -76,14 +80,17 @@
                 anchor_y: "center"
                 TextInput:
                     text: '6001'
-                    id: me_word_num_box_input
+                    id: video_input
                     size_hint_x: .5
                     size_hint_y: None
                     height: '32dp'
                     padding_x: [self.center[0]/6.0 - self._get_text_width(max(self._lines, key=len), self.tab_width, self._label_cached)/6.0, 0]
                     padding_y: [self.height/2.0 - (self.line_height/2.0) * len(self._lines), 0]
         BoxLayout:
+            id:connect_button
             ConnectButton:
+                on_press:root.try_connect()
+
 
 
 

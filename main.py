@@ -1,4 +1,3 @@
-from kivy.uix.accordion import Accordion, AccordionItem
 from kivy.uix.label import Label
 from kivy.app import App
 from kivy.uix.screenmanager import Screen, ScreenManager
@@ -13,7 +12,6 @@ from pages.target_tracking_page.target_tracking import TargetTrackingPage
 from pages.target_recognition_page.target_recognition import TargetRecognitionPage
 from pages.identification_control.identification_control import IdentificationControlPage
 from pages.auto_driving.auto_driving import AutoDrivingPage
-
 
 
 class MyApp(App):

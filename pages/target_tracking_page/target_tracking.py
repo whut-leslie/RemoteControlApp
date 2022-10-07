@@ -15,8 +15,27 @@ class FaceTrackingImageButton(ButtonBehavior, Image):
 class ColorTrackingImageButton(ButtonBehavior, Image):
     pass
 
+
 class ColorFollowImageButton(ButtonBehavior, Image):
     pass
+
+
+class RedColorImageButton(ButtonBehavior, Image):
+    pass
+
+
+class GreenColorImageButton(ButtonBehavior, Image):
+    pass
+
+
+class BlueColorImageButton(ButtonBehavior, Image):
+    pass
+
+
+class YellowColorImageButton(ButtonBehavior, Image):
+    pass
+
+
 class TargetTrackingPage(FloatLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -24,6 +43,7 @@ class TargetTrackingPage(FloatLayout):
     @staticmethod
     def index_slide_button():
         App.get_running_app().screen_manager.current = 'Index'
+
 
 class TargetTrackingApp(App):
     def build(self):
